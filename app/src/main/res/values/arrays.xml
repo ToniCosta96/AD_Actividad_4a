@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ciclo_y_curso">
+        <item>DAM 1º</item>
+        <item>DAM 2º</item>
+        <item>DAW 1º</item>
+        <item>DAW 2º</item>
+    </string-array>
+    <string-array name="despacho">
+        <item>1A</item>
+        <item>1B</item>
+        <item>1C</item>
+        <item>2A</item>
+        <item>2B</item>
+        <item>2C</item>
+    </string-array>
+</resources>

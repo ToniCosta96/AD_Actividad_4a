@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AD_Actividad_4a</string>
+    <string name="introducir_estudiante">Introducir estudiante</string>
+    <string name="introducir_profesor">Introducir profesor</string>
+    <string name="nom">Nom</string>
+    <string name="edad">Edad</string>
+    <string name="nota_media">Nota media</string>
+    <string name="guardar">Guardar</string>
+    <string name="donde_tutor">Dónde es tutor:</string>
+    <string name="despacho">Despacho:</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="id">ID</string>
+    <string name="eliminar_DB">Eliminar base de datos</string>
+</resources>
