@@ -17,9 +17,11 @@ public class MainActivity extends AppCompatActivity {
         final Button btnIntroducirEstudiante= (Button) findViewById(R.id.btn_introducir_estudiante);
         final Button btnIntroducirProfesor= (Button) findViewById(R.id.btn_introducir_profesor);
         final Button btnEliminarDB= (Button) findViewById(R.id.btn_eliminar_DB);
+        final Button btnConsultarBD= (Button) findViewById(R.id.btn_consultar_BD);
         btnIntroducirEstudiante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Introducir estudiante
                 Intent i= new Intent(getApplicationContext(),IntrEstudiantActivity.class);
                 startActivity(i);
             }
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         btnIntroducirProfesor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Introducir profesor
                 Intent i= new Intent(getApplicationContext(),IntrProfesorActivity.class);
                 startActivity(i);
             }
@@ -34,10 +37,19 @@ public class MainActivity extends AppCompatActivity {
         btnEliminarDB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Eliminar base de datos
                 MyDBAdapter dbAdapter;
                 dbAdapter = new MyDBAdapter(getApplicationContext());
                 dbAdapter.open();
                 dbAdapter.eliminarDB();
+            }
+        });
+        btnConsultarBD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Consultar la base de datos
+                Intent i= new Intent(getApplicationContext(),ConsultasActivity.class);
+                startActivity(i);
             }
         });
     }

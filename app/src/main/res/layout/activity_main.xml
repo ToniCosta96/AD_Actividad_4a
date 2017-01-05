@@ -33,4 +33,12 @@
         android:layout_below="@+id/btn_introducir_profesor"
         android:layout_alignParentStart="true"
         android:id="@+id/btn_eliminar_DB" />
+
+    <Button
+        android:text="@string/consultar_DB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_eliminar_DB"
+        android:layout_alignParentStart="true"
+        android:id="@+id/btn_consultar_BD" />
 </RelativeLayout>

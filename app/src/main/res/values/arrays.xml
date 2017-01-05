@@ -14,4 +14,14 @@
         <item>2B</item>
         <item>2C</item>
     </string-array>
+    <string-array name="tipo_consulta_1">
+        <item>Por ID</item>
+        <item>Por nombre</item>
+        <item>Ciclo y curso</item>
+    </string-array>
+    <string-array name="tipo_consulta_2">
+        <item>Estudiantes</item>
+        <item>Profesores</item>
+        <item>Todos</item>
+    </string-array>
 </resources>

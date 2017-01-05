@@ -11,4 +11,8 @@
     <string name="eliminar">Eliminar</string>
     <string name="id">ID</string>
     <string name="eliminar_DB">Eliminar base de datos</string>
+    <string name="consultar_DB">Consultar base de datos</string>
+    <string name="buscar_por">Buscar por:</string>
+    <string name="devolver">Devolver:</string>
+    <string name="consultar">Consultar</string>
 </resources>

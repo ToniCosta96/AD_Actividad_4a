@@ -2,12 +2,15 @@ package com.example.a2dam.ad_actividad_4a;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.io.File;
+import java.util.ArrayList;
 
 /**
  * Created by 2dam on 12/12/2016.
@@ -15,13 +18,14 @@ import java.io.File;
 
 public class MyDBAdapter {
     private static final String DATABASE_NAME = "db4a.db";
-    private static final String DATABASE_ESTUDIANTE = "estudiantes";
-    private static final String DATABASE_PROFESOR = "profesor";
+    public static final String DATABASE_ESTUDIANTE = "estudiantes";
+    public static final String DATABASE_PROFESOR = "profesor";
     private static final int DATABASE_VERSION = 1;
 
-    private static final String NOMBRE = "nombre";
+    public static final String ID="_id";
+    public static final String NOMBRE = "nombre";
     private static final String EDAD = "edad";
-    private static final String CICLO_Y_CURSO = "ciclo_y_curso";
+    public static final String CICLO_Y_CURSO = "ciclo_y_curso";
     private static final String NOTA_MEDIA = "nota_media";
     private static final String TUTOR = "tutor";
     private static final String DESPACHO = "despacho";
@@ -31,7 +35,7 @@ public class MyDBAdapter {
     private static final String DATABASE_CREATE_PROFESOR = "CREATE TABLE "+DATABASE_PROFESOR+" (_id integer primary key autoincrement, nombre text, edad integer, ciclo_y_curso text, tutor text, despacho text);";
     private static final String DATABASE_DROP_PROFESOR = "DROP TABLE IF EXISTS "+DATABASE_PROFESOR+";";
 
-    private String DATABASE_PATH;
+    private static String DATABASE_PATH;
 
     // Contexto de la aplicación que usa la base de datos
     private final Context context;
@@ -52,6 +56,20 @@ public class MyDBAdapter {
         }catch(SQLiteException e){
             db = dbHelper.getReadableDatabase();
         }
+    }
+
+    public void seleccionar(ArrayList<Elemento>arrayElementos, String valor, String columna, String tabla){
+        String selectQuery = "SELECT * FROM "+tabla+" WHERE "+columna+" LIKE '"+valor+"';";
+        Cursor cursor= db.rawQuery(selectQuery, null);
+        String[] data= null;
+
+        if(cursor.moveToFirst()){
+            do {
+                // get the data into array, or class variable
+                arrayElementos.add(new Elemento(cursor.getInt(0),cursor.getString(1)));
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
     }
 
     public void insertarEstudiante(String n, int e, String cc, float nm){

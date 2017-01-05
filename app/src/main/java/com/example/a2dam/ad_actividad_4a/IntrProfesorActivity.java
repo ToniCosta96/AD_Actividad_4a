@@ -28,6 +28,7 @@ public class IntrProfesorActivity extends AppCompatActivity {
 
         dbAdapter = new MyDBAdapter(getApplicationContext());
 
+        //Llenar spinners
         ArrayAdapter<String> adaptadorCurs = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.ciclo_y_curso));
         spinnerCicleCurs.setAdapter(adaptadorCurs);
         ArrayAdapter<String> adaptadorTutor = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.ciclo_y_curso));
@@ -52,6 +53,7 @@ public class IntrProfesorActivity extends AppCompatActivity {
                 }catch(NumberFormatException nfe){
                     Toast.makeText(getApplicationContext(),"No se ha introducido la edad",Toast.LENGTH_SHORT).show();
                 }
+                finish();
             }
         });
         btnEliminar.setOnClickListener(new View.OnClickListener() {

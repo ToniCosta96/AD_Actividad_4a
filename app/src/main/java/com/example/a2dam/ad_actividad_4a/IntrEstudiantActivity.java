@@ -47,6 +47,7 @@ public class IntrEstudiantActivity extends AppCompatActivity {
                 }catch (NumberFormatException nfe){
                     Toast.makeText(getApplicationContext(),"Faltan datos por introducir",Toast.LENGTH_SHORT).show();
                 }
+                finish();
             }
         });
 
