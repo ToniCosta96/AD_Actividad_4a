@@ -61,11 +61,10 @@ public class MyDBAdapter {
     public void seleccionar(ArrayList<Elemento>arrayElementos, String valor, String columna, String tabla){
         String selectQuery = "SELECT * FROM "+tabla+" WHERE "+columna+" LIKE '"+valor+"';";
         Cursor cursor= db.rawQuery(selectQuery, null);
-        String[] data= null;
 
         if(cursor.moveToFirst()){
             do {
-                // get the data into array, or class variable
+                //Se crea un objeto 'Elemento' con los datos de la DB recogidos por el cursor
                 arrayElementos.add(new Elemento(cursor.getInt(0),cursor.getString(1)));
             } while (cursor.moveToNext());
         }

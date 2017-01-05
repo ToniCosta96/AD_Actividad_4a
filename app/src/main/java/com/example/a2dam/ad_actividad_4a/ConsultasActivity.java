@@ -78,7 +78,7 @@ public class ConsultasActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Vaciar recyclerView
                 arrayElementos.clear();
-                //Acceder a la base de datos
+                //Se prepara el tipo de consulta
                 String nombreColumna="";
                 String valor="";
                 switch((int) spinnerBusqueda1.getSelectedItemId()){
@@ -95,7 +95,7 @@ public class ConsultasActivity extends AppCompatActivity {
                         valor=spinnerConsulta.getSelectedItem().toString();
                         break;
                 }
-
+                //Acceder a la base de datos
                 switch((int) spinnerBusqueda2.getSelectedItemId()){
                     case 0:
                         dbAdapter.seleccionar(arrayElementos,valor,nombreColumna,dbAdapter.DATABASE_ESTUDIANTE);
