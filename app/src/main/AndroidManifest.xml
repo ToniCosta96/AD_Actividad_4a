@@ -18,6 +18,7 @@
         <activity android:name=".IntrEstudiantActivity" />
         <activity android:name=".IntrProfesorActivity" />
         <activity android:name=".ConsultasActivity" />
+        <activity android:name=".ConsultarPorLetraActivity"></activity>
     </application>
 
 </manifest>

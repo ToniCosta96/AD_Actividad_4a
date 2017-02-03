@@ -15,4 +15,6 @@
     <string name="buscar_por">Buscar por:</string>
     <string name="devolver">Devolver:</string>
     <string name="consultar">Consultar</string>
+    <string name="consultar_por_letra">Consultar por letra</string>
+    <string name="tv_consultar_letra">Consultar las personas que empiezan por la siguiente letra:</string>
 </resources>

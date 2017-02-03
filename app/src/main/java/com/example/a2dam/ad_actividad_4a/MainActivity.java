@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         final Button btnIntroducirProfesor= (Button) findViewById(R.id.btn_introducir_profesor);
         final Button btnEliminarDB= (Button) findViewById(R.id.btn_eliminar_DB);
         final Button btnConsultarBD= (Button) findViewById(R.id.btn_consultar_BD);
+        final Button btnConsultarLetra= (Button) findViewById(R.id.btn_consultar_por_letra);
         btnIntroducirEstudiante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,6 +50,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Consultar la base de datos
                 Intent i= new Intent(getApplicationContext(),ConsultasActivity.class);
+                startActivity(i);
+            }
+        });
+        btnConsultarLetra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Consultar la base de datos por letra
+                Intent i= new Intent(getApplicationContext(),ConsultarPorLetraActivity.class);
                 startActivity(i);
             }
         });
